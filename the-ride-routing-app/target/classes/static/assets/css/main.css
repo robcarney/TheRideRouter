@@ -1,0 +1,258 @@
+/*Override Materialize Nav*/
+nav {
+	background-color: #ffa827; /*The yellow color of The RIDE*/
+}
+
+nav .brand-logo {
+	color: black;
+}
+
+nav ul a {
+	color: black;
+}
+
+
+/*Other css*/
+.col {
+	margin-bottom: 0.75rem;
+	position: relative;
+}
+
+.container .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+div.breadcrumb {
+	margin: 2% 5% 0 5%;
+	height: 1em;
+}
+
+div.logo {
+	text-align: center;
+}
+
+div.logo > h1 {
+	font-size: 4em;
+	margin: 7% 0;
+}
+
+div.logo > img {
+	margin: 3% 0;
+}
+
+/*Home Page*/
+
+div.file-upload {
+	text-align: center;
+}
+
+/*Upload Pge*/
+.file-fields  {
+	text-align: center;
+}
+
+.button-wrapper {
+	text-align: center;	
+}
+
+.bus-num-wrapper {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.bus-num-wrapper > label {
+	font-size: 1.1rem;
+}
+
+.bus-num-wrapper > input {
+	margin: 0 0 5px 0;
+}
+
+.file-wrapper {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.button-wrapper > a {
+	 border: 1px solid #aaa;
+	 border-radius: 5px;
+	 color: #555;
+	 background-color: white;
+	 padding: 1% 2%;
+	 margin: 0 5%;
+ }
+
+.button-wrapper > button {
+	border: 1px solid #aaa;
+	border-radius: 5px;
+	color: #555;
+	background-color: white;
+	padding: 1% 2%;
+	margin: 0 5%;
+}
+
+.button-wrapper > a:focus {
+	background-color: #cacaca;
+}
+
+.button-wrapper > button {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    color: #555;
+    background-color: white;
+    padding: 1% 2%;
+    margin: 0 5%;
+}
+
+.button-wrapper > button:focus {
+	background-color: #cacaca;
+}
+
+div.pagetip > h6 {
+    font-size: 1.1rem;
+    margin-bottom: 2%;
+    text-align: center;
+    color: #333;
+}
+#file {
+    /*border-radius: 5px;
+    color: #555;
+    background-color: #eee;
+    padding: 1% 2%;*/
+    font-size: 1.05rem;
+}
+
+.file-upload {	
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin-bottom: 3%;
+}
+
+/*Result Page*/
+
+div.dedicated-vehicle {
+}
+
+div.route-cost {
+	text-align: right;
+	margin-right: 1%;
+	margin-top: 2.5%;
+
+}
+
+div.dedicated-vehicle > h4 {
+    margin-bottom: 0.5em;
+    font-size: 2rem;
+}
+
+div.non-dedicated-vehicle {
+}
+
+div.non-dedicated-vehicle > h4 {
+    margin-bottom: 0.5em;
+    font-size: 2rem;
+}
+
+div.file-row > a {	
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #555;
+    background-color: #fafafa;
+    padding: 0.2% 0.8%;
+}
+
+div.file-row > a:focus {
+	background-color: #cacaca;
+}
+
+div.file-row {
+	background-color: #eee;
+	height: 2.7rem;
+    margin-bottom: 7%;
+}
+
+div.file-row > p {
+	display: inline;
+    vertical-align: -webkit-baseline-middle;
+    padding: 0 2.5%;
+}
+
+div.file-row > a {
+	display: inline;
+	position: absolute;
+	margin: 0.4em 0;
+}
+
+div.file-row > a:nth-child(2) {
+	right: 19.5%;
+}
+
+div.file-row > a:nth-child(3) {
+	right: 7.7%;
+}
+
+@media only screen and (min-width: 768px) {
+
+	div.file-row > a:nth-child(2) {
+		right: 17.5%;
+	}
+	div.file-row > a:nth-child(3) {
+		right: 9%;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	div.logo > h1 {
+		margin: 5% 0;
+	}
+	div.file-row > a:nth-child(2) {
+		right: 22%;
+	}
+	div.file-row > a:nth-child(3) {
+		right: 15.5%;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	div.file-row > a:nth-child(2) {
+		right: 21.3%;
+	}
+	div.file-row > a:nth-child(3) {
+		right: 16%;
+	}
+}
+
+
+/*Loading Screen*/
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.custom-modal {
+    display:    none;
+    position:   absolute;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .custom-modal {
+    display: block;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head th:fragment="head(page_title)" lang="en">
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
+    <link rel="stylesheet" th:href="@{/assets/css/main.css}" />
+    <title th:text="'The RIDE Router | ' + ${page_title}">The RIDE Router</title>
+  </head>
+
+  <body>
+  <div th:fragment="nav(active_menu)" class="navbar-fixed">
+    <nav>
+      <div class="container">
+        <a th:href="@{/}" class="brand-logo">The RIDE Router</a>
+          <ul class="right hide-on-med-and-down">
+            <li th:classappend="${active_menu.equals('home') ? 'active' : ''}"><a th:href="@{/}">Home</a></li>
+            <li th:classappend="${active_menu.equals('upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
+            <li><a th:href="@{/}">Past Data</a></li>
+            <li th:classappend="${active_menu.equals('account') ? 'active' : ''}"><a th:href="@{/account}">Account</a></li>
+          </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div th:fragment="scripts">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script th:src="@{/js/mockjax.js}"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+    <script th:inline="javascript">
+      $body = $("body");
+
+      $(document).on({
+        ajaxStart: function() { $body.addClass("loading"); },
+        //$.('#submit-button').innerHTML = '<a th:href="@{/result}"></a>'; }
+        //th:href="@{/result}";}
+      });
+
+      // Initiates an AJAX request on click
+      $('#submit-button').on("click", function(){
+        $.get("/mockjax");
+      });
+    </script>
+  </div>
+  </body>
+</html>
+
+

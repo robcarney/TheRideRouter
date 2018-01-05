@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head th:replace="layout :: head('Result')">
+    <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+  </head>
+  <body>
+    <div th:replace="layout :: nav('upload')"></div>
+    <div class="container result">
+  	<header>
+      <!--<div class="breadcrumb">
+        <a href="/">Back</a>
+      </div>-->
+      <div class="logo">
+  		  <!--<h1>The RIDE</h1>-->
+          <img th:src="@{/assets/pictures/the-ride.png}"> </img>
+      </div>
+  	</header>
+  	<section>
+  		<div class="dedicated-vehicle">
+        <h4> Dedicated Vehicles</h4>
+        <div th:each="file : ${files}" class="file-row">
+            <p th:text="${'Dedicated Vehicle '+file.id}"></p>
+            <a class="button" href="#">More Details</a>
+            <a class="button" download="dedicated-vehicle.csv" th:href="@{'/download?file=' + ${file.fileUrl}}">Export</a>
+        </div>
+        <div class="route-cost"><p>Total cost of the day: $<span th:text="${cost}"></span></p></div>
+      </div>
+
+      <!--<div class="non-dedicated-vehicle">
+        <h4> Non-Dedicated Vehicle</h4>
+        <div class="file-row">
+          <p>Non-Dedicated-Vehicle-Routes.csv</p>
+          <a class="button" href="#">Call to API</a>
+          <a class="button" th:href="@{/assets/theride.jpg}" download="non-dedicated-vehicle">Export</a>
+        </div>
+      </div>-->
+	  </section>
+  </div>
+  <div th:replace="layout :: scripts"></div>
+  </body>
+</html>

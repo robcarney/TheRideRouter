@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="layout :: head('Upload')">
+    <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+  </head>
+  <body>
+    <div th:replace="layout :: nav('upload')"></div>
+    <div class="container upload">
+      <header>
+        <!--<div class="breadcrumb"></div>-->
+        <div class="logo">
+          <!--<h1>The RIDE</h1>
+          <h4>Upload</h4>-->
+          <img th:src="@{/assets/pictures/the-ride.png}"> </img>
+        </div>  
+        <div class="pagetip">
+            <h6>Upload <strong>.csv file</strong> with correctly formatted trip manifest to create a ledger.</h6>
+        </div>
+      </header>
+        <form method="post" class="file-upload">
+          <div class="row">
+            <div class="col s10 push-s1 pull-s1">
+              <div class="file-wrapper">
+                <input type="file" id="file" accept="*.csv" name="file"/>
+                <!--<span class="placeholder" data-placeholder="Choose an file...">Choose an file...</span>
+                <label for="file" class="button">Browse</label>-->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s8 push-s2 pull-s2">
+              <div class="button-wrapper">
+                <a th:text="Submit" type="submit" class="button" id="submit-button" href="#">Upload</a>
+                <a href="javascript:window.location = document.referrer;" class="button">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </form>    
+        <div class="custom-modal"><!-- Place at bottom of page --></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script th:src="@{/js/mockjax.js}"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+    <script th:inline="javascript">
+        $body = $("body");
+
+        $(document).on({
+          ajaxStart: function() { $body.addClass("loading"); },
+          ajaxStop: function() { $body.removeClass("loading"); 
+          window.location.href="result.html";}
+          //$.('#submit-button').innerHTML = '<a th:href="@{/result}"></a>'; }
+          //th:href="@{/result}";}
+        });
+
+        // Initiates an AJAX request on click
+        $('#submit-button').on("click", function(){
+            $.get("/mockjax");        
+        });
+    </script>
+
+  </body>
+</html>

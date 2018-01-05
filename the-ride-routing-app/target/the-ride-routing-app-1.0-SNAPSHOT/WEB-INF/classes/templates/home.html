@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="layout :: head('Home')"></head>
+	<body>
+		<div th:replace="layout :: nav('home')"></div>
+		<div class="container">
+			<header>
+				<!--<div class="breadcrumb"></div>-->
+				<div class="logo">
+					<!--<h1>The RIDE</h1>-->
+					<img th:src="@{/assets/pictures/the-ride.png}"> </img>
+				</div>
+			</header>
+			<section>
+				<div class="row">
+					<div class="col s10 push-s1 pull-s1">
+						<div class="description">
+							<p>The RIDE is the MBTA's door-to-door, shared-ride paratransit service. The RIDE is operated by the MBTA in compliance with the Americans with Disabilities Act (ADA).</p>
+							<p>The RIDE is available in 58 cities and towns in the greater Boston area, with similar operating hours to the MBTA-generally from 5 AM to 1 AM daily. To access The RIDE, you have to apply and be approved by The RIDE Eligibility Center (TREC).</p>
+							<p>This is a tool to generate a trip manifest based on the daily requests of the RIDE</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+
+	</body>
+</html>
