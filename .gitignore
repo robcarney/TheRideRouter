@@ -1,0 +1,39 @@
+# Putting the target folder here (from spring), but we might want #
+# to take it out later #
+*/target
+
+# System folders #
+.DS_Store
+
+# Intellij #
+.idea/
+*.iml
+*.iws
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
